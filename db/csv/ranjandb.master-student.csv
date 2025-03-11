@@ -1,0 +1,11 @@
+ID,NAME,CLASS_ID,GENDER,HOUSENO,STREET,CITY,COUNTRY
+S001,Alice Johnson,10,F,101,b6187c15-b0e5-42fb-976b-444375129d88,New York,USA
+S002,Bob Smith,9,M,202,fa4fa92a-7083-4f20-b641-27d8ea6011e8,Los Angeles,USA
+S003,Charlie Brown,8,M,303,5920d008-a800-4d73-952a-5a3657709bb6,Chicago,USA
+S004,Daisy Evans,10,F,404,b8158029-a9df-41da-aab3-af6c94ec7bd9,Houston,USA
+S005,Ethan Clark,7,M,505,ad809485-7ec2-4f0f-be8d-9714b30eb6f5,Miami,USA
+S006,Fiona Adams,9,F,606,f1f1e548-1d9e-44ae-bc5c-765c9d802eb2,San Francisco,USA
+S007,George Wilson,8,M,707,be80f06a-b729-4505-b22c-bbbc1fc188de,Seattle,USA
+S008,Hannah Lee,7,F,808,66abb134-7db4-438d-b5e1-e1f15a5e27dc,Boston,USA
+S009,Ian Thomas,10,M,909,07bee1e0-152a-42d3-906a-94f7be96da05,Denver,USA
+S010,Julia Roberts,9,F,100,407b8acc-6230-4743-831a-16d3ebe20a4e,Dallas,USA

@@ -1,0 +1,57 @@
+{
+  "name": "CAPM_Final_POC_HANA",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap/cds": "^8",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/hana-client": "^2.23.27",
+    "@sap/xssec": "^4",
+    "express": "^4",
+    "passport": "0.7.0"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.9.0",
+    "@cap-js/sqlite": "^1"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
+    "requires": {
+      "db": "hana",
+      "uaa": {
+        "kind": "xsuaa"
+      },
+      "auth": {
+        "[development]": {
+          "strategy": "mocked",
+          "users": {
+            "Ranjan":{
+              "roles": ["Viewer"],
+              "userAttributes":{
+                "BankName":["My Bank of San Francisco"]
+              }
+            },
+            "Mita":{
+              "roles": ["Viewer","Admin"],
+              "userAttributes":{
+                "BankName":["My Bank of New York"]
+            }
+          }
+        }
+        },
+        "[production]": {
+          "strategy": "JWT"
+        }
+      }
+    }
+  }
+}

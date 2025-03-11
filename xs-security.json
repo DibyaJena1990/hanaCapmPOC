@@ -1,0 +1,54 @@
+{
+  "xsappname": "CAPM_Final_POC_HANA",
+  "scopes": [
+      {
+          "name": "$XSAPPNAME.Viewer",
+          "description": "Able to view data from services"
+      },
+      {
+          "name": "$XSAPPNAME.Admin",
+          "description": "Able to edit data also"
+      }
+  ],
+  "attributes": [
+      {
+          "name": "BankName",
+          "description": "Bank Name Attribute to Allow row level security",
+          "valueType": "string"
+      }
+  ],
+  "role-templates": [
+      {
+          "name": "Viewer",
+          "description": "View all employees",
+          "default-role-name": "Viewer: Authorized to Read All Employees",
+          "scope-references": [
+              "$XSAPPNAME.Viewer"
+          ],
+          "attribute-references": [
+              {
+                  "name": "BankName"
+              }
+          ]
+      },
+      {
+          "name": "Admin",
+          "description": "Edit the employee details",
+          "scope-references": [
+              "$XSAPPNAME.Admin"
+          ]
+      }
+  ],
+  "authorities": [
+      "$ACCEPT_GRANTED_AUTHORITIES"
+  ],
+  "oauth2-configuration": {
+      "token-validity": 900,
+      "refresh-token-validity": 1800,
+      "redirect-uris": [
+          "https://api.cf.us10-001.hana.ondemand.com"
+      ],
+      "autoapprove": "false"
+  },
+  "xsenableasyncservice": "true"
+}

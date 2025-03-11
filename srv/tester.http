@@ -1,0 +1,93 @@
+###Get the service Document
+http://localhost:4004/odata/v4/CatalogService
+
+###Get the metadata
+http://localhost:4004/odata/v4/CatalogService/$metadata
+
+###Get buisness Partner Data
+http://localhost:4004/odata/v4/CatalogService/BuisnessPartnerSet
+
+###
+http://localhost:4004/odata/v4/CatalogService/BuisnessPartnerSet?$top=2&$skip=2
+
+###
+http://localhost:4004/odata/v4/CatalogService/BusinessPartnerSet?$filter=BP_ID eq '100000000'
+
+###
+http://localhost:4004/odata/v4/CatalogService/BuisnessPartnerSet/$count
+
+###get the single PO
+http://localhost:4004/odata/v4/CatalogService/POs
+
+###get the PO and its data together - Association
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052?$expand=Items,PARTNER_GUID
+
+###Get Employee data
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+
+###Get Employee Single Data
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+
+###Post - To create a New Employee
+POST http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "Dibya",
+  "nameMiddle": "Ranjan",
+  "nameLast": "Jena",
+  "nameInitials": "Mr.",
+  "sex": "M",
+  "language": "E",
+  "phonenumber": "+918056229637",
+  "email": "sally.spring@itelo.info",
+  "loginName": "SPRINGS",
+  "Currency_code": "USD",
+  "salaryAmount": 1000000,
+  "accountNumber": "111222333",
+  "bankId": "510000655",
+  "bankName": "My Bank of India"
+}
+
+###get recent created employee
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/0b439aa1-6a71-46c0-828f-4b5451dae52e
+
+###get single POs
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052
+
+###get single POs
+POST http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052/boost
+Content-Type: application/json
+
+{}
+
+###get single POs with the largest Groos Amount using Generic Handlers
+GET  http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC28052/largestOrder()
+Content-Type: application/json
+
+{}
+
+###getting product data from cds view
+GET  http://localhost:4004/odata/v4/MyService/ProductOrdersSet/74867AD200E41EDBA5D8B06B26EB4052
+
+###get me all the data for the single product id
+GET  http://localhost:4004/odata/v4/MyService/ProductOrdersSet/74867AD200E41EDBA5D8B06B26EB4052?$expand=ProductOrders
+
+### complete custom entity which has structure from database but logic by our own handling
+GET http://localhost:4004/odata/v4/MyService/ReadEmployeeSrv
+
+###get single POs with the largest Groos Amount using Generic Handlers
+GET  http://localhost:4004/odata/v4/CatalogService/POs
+
+
+###get all pos using V2 Adapter
+GET  http://localhost:4004/v2/odata/v4/CatalogService/POs
+
+
+###testing Security
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Authorization: Basic Ranjan:
+
+###testing Security
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Authorization: Basic Mita:
