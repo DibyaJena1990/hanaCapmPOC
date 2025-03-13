@@ -46,7 +46,7 @@
       "token-validity": 900,
       "refresh-token-validity": 1800,
       "redirect-uris": [
-          "https://api.cf.us10-001.hana.ondemand.com/login/callback"
+          "https://*.cfapps.eu10.hana.ondemand.com/login/callback"
       ],
       "autoapprove": "false"
   },

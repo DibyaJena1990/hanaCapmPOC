@@ -41,7 +41,6 @@ modules:
           name: srv-api # must be used in xs-app.json as well
           url: ~{srv-url}
           forwardAuthToken: true
-
       - name: CAPM_Final_POC_HANA-auth
     provides:
       - name: app-api
@@ -72,4 +71,4 @@ resources:
       path: ./xs-security.json
       config:
         tenant-mode: shared
-        tenant-host-pattern: "^(.*).cfapps.us10-001.hana.ondemand.com"
+        tenant-host-pattern: "*.cfapps.us10-001.hana.ondemand.com"
