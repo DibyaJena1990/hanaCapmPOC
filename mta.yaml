@@ -70,3 +70,6 @@ resources:
       service: xsuaa
       service-plan: application
       path: ./xs-security.json
+      config:
+        tenant-mode: shared
+        tenant-host-pattern: "^(.*).cfapps.us10-001.hana.ondemand.com"
