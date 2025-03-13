@@ -46,7 +46,7 @@
       "token-validity": 900,
       "refresh-token-validity": 1800,
       "redirect-uris": [
-          "https://*.cfapps.eu10.hana.ondemand.com/login/callback"
+          "https://70cd8ec2trial-dev-capm-final-poc-hana.cfapps.us10-001.hana.ondemand.com/login/callback"
       ],
       "autoapprove": "false"
   },
