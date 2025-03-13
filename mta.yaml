@@ -24,6 +24,7 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
+      - name: CAPM_Final_POC_HANA-auth
       - name: CAPM_Final_POC_HANA-db
 
   - name: CAPM_Final_POC_HANA
@@ -40,6 +41,8 @@ modules:
           name: srv-api # must be used in xs-app.json as well
           url: ~{srv-url}
           forwardAuthToken: true
+
+      - name: CAPM_Final_POC_HANA-auth
     provides:
       - name: app-api
         properties:
@@ -60,3 +63,10 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+
+  - name: CAPM_Final_POC_HANA-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json

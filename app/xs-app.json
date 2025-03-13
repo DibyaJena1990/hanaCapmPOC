@@ -1,7 +1,7 @@
 {
  "welcomeFile": "purchaseorderapp/webapp",
- "authenticationMethod": "route" ,
- "sessionTimeout": 10, 
+ "authenticationMethod": "route",
+ "sessionTimeout": 10,
  "routes": [
   {
    "source": "^/purchaseorderapp/webapp/1(.*)$",
