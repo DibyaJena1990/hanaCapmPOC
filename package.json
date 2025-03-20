@@ -5,6 +5,9 @@
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@cap-js/hana": "^1",
     "@sap/cds": "^8",

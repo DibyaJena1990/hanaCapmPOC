@@ -2,6 +2,7 @@ using { ranjan.db.master,ranjan.db.transaction } from '../db/data-model';
 
 service CatalogService@(path: 'CatalogService', requires: 'authenticated-user'){
     entity BuisnessPartnerSet as projection on master.buisnesspartner;
+    
     entity EmployeeSet @(restrict:[
         {grant: 'READ', to:'Viewer', where: 'bankName = $user.BankName'},
         {grant: 'WRITE', to:'Admin'}
