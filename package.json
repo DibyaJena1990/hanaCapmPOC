@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@cap-js/hana": "^2.0",
+    "@cap-js/hana": "^1",
     "@sap/cds": "^8",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "@sap/hana-client": "^2.23.27",
@@ -23,13 +23,11 @@
     "start": "cds-serve"
   },
   "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
     "requires": {
-      "db": {
-        "kind": "hana",
-        "sql": {
-          "native_hana_associations": false
-        }
-      },
+      "db": "hana",
       "uaa": {
         "kind": "xsuaa"
       },
